@@ -2,7 +2,7 @@ import { axiosInstance } from '@/axiosService';
 import { useAuth } from '@/contexts/AuthContext';
 import { GoogleLogin, type CredentialResponse } from '@react-oauth/google';
 
-export default function () {
+export default function Login() {
   const { login } = useAuth();
 
   const googleCallback = async (credentialResponse: CredentialResponse) => {
