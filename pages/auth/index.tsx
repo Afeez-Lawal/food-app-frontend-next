@@ -1,14 +1,16 @@
 import { axiosInstance } from '@/axiosService';
+import { useAuth } from '@/contexts/AuthContext';
 import { GoogleLogin, type CredentialResponse } from '@react-oauth/google';
 
 export default function () {
+  const { login } = useAuth();
+
   const googleCallback = async (credentialResponse: CredentialResponse) => {
-    console.log(credentialResponse);
     const { data } = await axiosInstance.post('/auth/callback/google', {
       token: credentialResponse.credential,
     });
 
-    console.log(data);
+    login(data.token);
   };
 
   return (
