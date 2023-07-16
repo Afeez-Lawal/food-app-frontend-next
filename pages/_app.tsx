@@ -1,4 +1,4 @@
-import AppShell from '@/components/AppShell';
+import AppShell from '@/components/Layout/AppShell';
 import { AuthProvider } from '@/contexts/AuthContext';
 import '@/styles/globals.css';
 import { GoogleOAuthProvider } from '@react-oauth/google';
